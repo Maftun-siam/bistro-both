@@ -6,18 +6,18 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_apiKey,
-    authDomain: import.meta.env.VITE_authDomain,
-    projectId: import.meta.env.VITE_projectId,
-    storageBucket: import.meta.env.VITE_storageBucket,
-    messagingSenderId: import.meta.env.VITE_messagingSenderId,
-    appId: import.meta.env.VITE_appId,
-    // apiKey: "AIzaSyAAnlni59_RYE2FQn_I5TGjj2vkHPURMo8",
-    // authDomain: "bistro-boss-a23ca.firebaseapp.com",
-    // projectId: "bistro-boss-a23ca",
-    // storageBucket: "bistro-boss-a23ca.appspot.com",
-    // messagingSenderId: "723137364151",
-    // appId: "1:723137364151:web:fe78019aa222c00eb44d32"
+    // apiKey: import.meta.env.VITE_apiKey,
+    // authDomain: import.meta.env.VITE_authDomain,
+    // projectId: import.meta.env.VITE_projectId,
+    // storageBucket: import.meta.env.VITE_storageBucket,
+    // messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    // appId: import.meta.env.VITE_appId,
+    apiKey: "AIzaSyAAnlni59_RYE2FQn_I5TGjj2vkHPURMo8",
+    authDomain: "bistro-boss-a23ca.firebaseapp.com",
+    projectId: "bistro-boss-a23ca",
+    storageBucket: "bistro-boss-a23ca.appspot.com",
+    messagingSenderId: "723137364151",
+    appId: "1:723137364151:web:fe78019aa222c00eb44d32"
 };
 
 // Initialize Firebase
