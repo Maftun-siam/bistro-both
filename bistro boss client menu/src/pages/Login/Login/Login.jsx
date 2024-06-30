@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const captchaRef = useRef(null);
     const [disable, setDisable] = useState(true);
@@ -38,42 +39,47 @@ const Login = () => {
         }
     }
     return (
-        <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <form onSubmit={handleLogin} className="card-body">
-                        <div className="form-control">
+        <>
+          <Helmet>
+                <title>Bistro Boss | Login</title>
+            </Helmet>
+            <div className="hero bg-base-200 min-h-screen">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <p className="py-6">
+                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        </p>
+                    </div>
+                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <form onSubmit={handleLogin} className="card-body">
+                            <div className="form-control">
 
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <input type="text" placeholder="password" name='password' className="input input-bordered" required />
-                        </div>
-                        {/* captcha started after password field */}
-                        <div className="form-control">
-                            <label className="label">
-                                <LoadCanvasTemplate />
-                            </label>
-                            <input type="text" ref={captchaRef} placeholder="type the text above" name='captcha' className="input input-bordered" required />
-                            <button onClick={handleValidateCaptcha} className='btn mt-2 btn-outlinr btn-xs'>Validate</button>
-                        </div>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <input type="text" placeholder="password" name='password' className="input input-bordered" required />
+                            </div>
+                            {/* captcha started after password field */}
+                            <div className="form-control">
+                                <label className="label">
+                                    <LoadCanvasTemplate />
+                                </label>
+                                <input type="text" ref={captchaRef} placeholder="type the text above" name='captcha' className="input input-bordered" required />
+                                <button onClick={handleValidateCaptcha} className='btn mt-2 btn-outlinr btn-xs'>Validate</button>
+                            </div>
 
-                        <div className="form-control mt-6">
-                            <input disabled={disable} type="submit" className='btn btn-primary' /> 
-                            <p className='mx-auto'><small>New here? <Link className='text-blue-500' to="/signup"> Create an Account</Link></small></p>
-                        </div>
-                    </form>
-                   
+                            <div className="form-control mt-6">
+                                <input disabled={disable} type="submit" className='btn btn-primary' />
+                                <p className='mx-auto'><small>New here? <Link className='text-blue-500' to="/signup"> Create an Account</Link></small></p>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
