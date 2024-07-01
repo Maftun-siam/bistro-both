@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 const SignUp = () => {
-    const { register, handleSubmit, watch, formState: { errors }, } = useForm();
+    const { register, handleSubmit, formState: { errors }, } = useForm();
 
 
 

@@ -3,6 +3,9 @@ module.exports = {
     browser: true, 
     es2020: true, 
     node: true,
+    rules: {
+      "no-unused-vars": "off"
+    }
   },
   extends: [
     'eslint:recommended',

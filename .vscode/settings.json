@@ -1,0 +1,19 @@
+{
+    "eslint.workingDirectories": [
+        {
+            "rules": {
+              "no-unused-vars": "off"
+            }
+          },
+          {
+            "rules": {
+              "no-unused-vars": "off"
+            }
+          }
+          
+          
+    ],
+    "eslint.options": {
+        
+    }
+}

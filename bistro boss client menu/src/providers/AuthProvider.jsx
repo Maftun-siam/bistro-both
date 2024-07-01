@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
@@ -11,17 +12,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    /* Setting up watchman to see all changes or activity of an user  */
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, curentUser => {
-            setUser(curentUser);
-            console.log("Current User : ", curentUser);
-            setLoading(false);
-        });
-        return () => {
-            return unsubscribe;
-        }
-    }, [])
+   
 
     /* Creating User  */
 
@@ -35,13 +26,25 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    /* SignOut USer */
+    /* SignOut User */
 
     const logOut = ()=>{
         setLoading(true);
         return signOut(auth);
     }
 
+     /* Setting up watchman to see all changes or activity of an user  */
+     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, curentUser => {
+            setUser(curentUser);
+            console.log("Current User : ", curentUser);
+            setLoading(false);
+        });
+        return () => {
+            return unsubscribe;
+        }
+    }, [])
+    
     const authInfo = {
         user,
         loading,
